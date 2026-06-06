@@ -1,16 +1,115 @@
-# React + Vite
+# 🎬 CineAI — AI-Powered Movie Recommender
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A conversational AI movie recommender built with React and Groq LLM. Users chat naturally with CineAI to get personalized movie recommendations based on their mood, genre preferences, language, and audience type.
 
-Currently, two official plugins are available:
+🌐 **Live Demo:** [movie-recommender-ap.vercel.app](https://movie-recommender-ap.vercel.app)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## ✨ Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- 🤖 **AI Chat Interface** — Conversational recommendations powered by Llama 3.3 via Groq
+- ❤️ **Watchlist** — Save movies and access them anytime
+- ⭐ **Star Ratings** — Rate movies 1–5 stars
+- 🌍 **Language Filter** — English, Hindi (Bollywood), Korean, Spanish, French
+- 👨‍👩‍👧 **Audience Filter** — All audiences, Family friendly, or Adult
+- ✨ **Surprise Me** — Get an instant random recommendation
+- 🌙 **Dark / Light Mode** — Toggle between themes
+- 💾 **Persistent Storage** — Chat history and watchlist saved in localStorage
+- 📱 **Responsive Design** — Works on desktop and mobile
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🛠️ Tech Stack
+
+| Technology | Purpose |
+|---|---|
+| React 18 | Frontend UI |
+| Vite | Build tool & dev server |
+| Groq API | AI language model (Llama 3.3 70B) |
+| Vercel | Hosting & serverless functions |
+| localStorage | Client-side data persistence |
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+- Node.js 18+
+- A free [Groq API key](https://console.groq.com)
+
+### Installation
+
+```bash
+# Clone the repo
+git clone https://github.com/Anjali01-ais/movie-recommender.git
+cd movie-recommender
+
+# Install dependencies
+npm install
+```
+
+### Environment Setup
+
+Create a `.env.local` file in the root:
+```
+GROQ_API_KEY=your_groq_api_key_here
+```
+
+### Run Locally
+
+```bash
+npm run dev
+```
+
+Open [http://localhost:5173](http://localhost:5173) in your browser.
+
+---
+
+## 📁 Project Structure
+
+```
+movie-recommender/
+├── api/
+│   └── chat.js          # Vercel serverless function (Groq API proxy)
+├── src/
+│   ├── App.jsx          # Main React component
+│   └── main.jsx         # Entry point
+├── index.html
+├── vercel.json          # Vercel deployment config
+├── vite.config.js       # Vite config with dev proxy
+└── .env.local           # API keys (not committed)
+```
+
+---
+
+## 🔒 Security
+
+- API key is stored in environment variables, never exposed in frontend code
+- `.env.local` is listed in `.gitignore`
+- All Groq API calls go through a serverless backend function
+
+---
+
+## 📦 Deployment
+
+This project is deployed on **Vercel**. Every push to `main` triggers an automatic redeployment.
+
+To deploy your own:
+1. Fork this repo
+2. Import to [vercel.com](https://vercel.com)
+3. Add `GROQ_API_KEY` in Vercel Environment Variables
+4. Deploy!
+
+---
+
+## 🙋‍♀️ Author
+
+**Anjali Singh**
+- GitHub: [@Anjali01-ais](https://github.com/Anjali01-ais)
+
+---
+
+## 📄 License
+
+MIT License — free to use and modify.
