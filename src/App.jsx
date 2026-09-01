@@ -114,7 +114,7 @@ export default function App() {
         
       },
       body: JSON.stringify({
-        model: 'llama-3.3-70b-versatile',
+        model: 'llama3-70b-8192',
         max_tokens: 1000,
         messages: [
           { role: 'system', content: SYSTEM_PROMPT(prefs) },
